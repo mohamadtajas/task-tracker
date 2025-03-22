@@ -56,7 +56,7 @@ function updateTask(id, updates) {
         task.description = updates.description;
     }
     if (updates.status) {
-        if (!['todo', 'in progress', 'done'].includes(updates.status)) {
+        if (!['todo', 'in-progress', 'done'].includes(updates.status)) {
             console.log(`Invalid status: ${updates.status}, Use todo, in progress, or done.`);
             return;
         }
@@ -88,9 +88,9 @@ function markTask(id, status) {
         console.log('Task not found:', taskId);
         return;
     }
-    const validStatuses = ['todo', 'in progress', 'done'];
+    const validStatuses = ['todo', 'in-progress', 'done'];
     if (!validStatuses.includes(status)){
-        console.error(`Invalid status: ${status}, Use todo, in progress, or done.`);
+        console.error(`Invalid status: ${status}, Use todo, in-progress, or done.`);
         return;
     }
     const task = tasks[taskIndex];
